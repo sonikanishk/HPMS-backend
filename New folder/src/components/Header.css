@@ -1,0 +1,91 @@
+.p1{
+    text-align: -webkit-center;
+}
+
+.header{
+    display:flex;
+}
+.logo{
+  background: url(logo.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 230px;
+  height: 115px;
+  background-position-x: right;
+}
+
+.nav1{
+font-size: 10pt;
+}
+.link{
+text-align: -webkit-center;
+justify-content: center;
+align-items: center;
+font-weight: 500;
+color:#626161;
+text-decoration: none;
+padding: 0.5rem;
+}
+.link:hover{
+color:#121212;
+background:#8dd9f0;
+text-decoration: none;
+transition: 0.25s;
+}
+#mr-auto{
+justify-content: flex-end;
+
+}
+.emergency{
+text-align: center;
+justify-content: center;
+align-items: center;
+font-weight: 500;
+color:#FF6347;
+text-decoration: none;
+padding: 0.5rem;
+}
+.emergency:hover{
+color:#FFFFFF;
+background:#FF6347;
+text-decoration: none;
+transition: 0.25s;
+}
+.appointment{
+  background: url(calendar.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  background-position-x: right;
+}
+.doctor{
+  background: url(doctor.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  background-position-x: right;
+}
+.queries{
+  background: url(help-call.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  background-position-x: right;
+}
+.reports{
+  background: url(medical-report.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  background-position-x: right;
+}
+@media only screen and (max-width: 768px) {
+#mr-auto{
+    justify-content: center;
+}
+
+#mr-auto2{
+    justify-content: space-around;
+}
+}
+
+
