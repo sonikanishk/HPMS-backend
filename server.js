@@ -1,10 +1,10 @@
-const express = require('express')
-const morgan = require('morgan')
-const connectDB = require('./config/db')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+const express = require('express');
+const morgan = require('morgan');
+const connectDB = require('./config/db');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const User = require('./models/auth.model');
-
+const path =  require('path');
 
 require('dotenv').config({
     path:'./config/config.env'
@@ -13,7 +13,8 @@ require('dotenv').config({
 const app = express();
 connectDB();
 app.use(bodyParser.json());
-
+app.use(cors());
+app.use(morgan('dev'));
   
 const authRouter = require('./routes/auth.route')
 const userRouter = require('./routes/user.route')
@@ -26,7 +27,12 @@ if (process.env.NODE_ENV === 'development'){
     //each req
 
 }
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 //use routes 
 app.use('/api',authRouter);

@@ -47,7 +47,7 @@ const Register = () => {
               password2: '',
               textChange: 'Sign Up'
             });
-            console.log(err.response);
+            
             toast.error(err.response.data.errors,{
                 position: "top-right",
                 autoClose: 5000,

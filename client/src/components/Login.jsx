@@ -5,7 +5,7 @@ import axios from 'axios';
 import { authenticate, isAuth } from '../helpers/auth';
 import { Redirect } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {Link} from 'react-router-dom';
 const Login = ({ history }) => {
   const [formData, setFormData] = useState({
     email: '',
@@ -93,7 +93,12 @@ const Login = ({ history }) => {
                   <i className='fas fa-sign-in-alt  w-6  -ml-2' />
                   <span className='ml-3'>Sign In</span>
                 </button>
-                
+                <Link
+                  to='/forgotpassword'
+                  className='no-underline hover:underline text-indigo-500 text-md text-right absolute right-0  mt-2'
+                >
+                  Forgot password?
+                </Link>
               </form>
             </div>
           </div>

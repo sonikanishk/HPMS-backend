@@ -8,15 +8,15 @@ import Emergency from'./components/Emergency';
 import AboutUs from'./components/AboutUs';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Register from './components/Register';
-import Activate from './components/Activate.jsx';
 import Login from './components/Login.jsx';
 import Private from './components/Private.jsx';
 import Signout from './components/SignOut.jsx';
+import Forgot from './components/Forgot.js';
+import Reset from './components/Reset.js';
+import dotenv from 'dotenv';
 
-require('dotenv').config({
-  path:'../client/cg.env'
-})
-
+dotenv.config();
+console.log(process.env.REACT_APP_API_URL);
 function App() {
   return (
     <div className="page-element">
@@ -29,12 +29,13 @@ function App() {
                         <Route path="/emergency" exact component = {Emergency} />
                         <Route path="/about-us" exact component = {AboutUs} />
                         <Route path="/register" exact component = {Register} />
-                        <Route path="/activate/:token" exact component = {Activate} />
                         <Route path="/login" exact component = {Login} />
                         <Route path="/private" exact component = {Private} />
                         <Route path="/signout" exact component = {Signout} />
+                        <Route path="/forgotpassword" exact component = {Forgot} />
+                        <Route path="/resetpassword/:token" exact component = {Reset} />
                         
-
+                        
                 </Switch>
             </Router>
         </div>
