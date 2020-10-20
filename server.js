@@ -6,6 +6,8 @@ const cors = require('cors');
 const User = require('./models/auth.model');
 const path =  require('path');
 
+const PORT = process.env.PORT || 8080;
+
 require('dotenv').config({
     path:'./config/config.env'
 })
@@ -27,13 +29,18 @@ if (process.env.NODE_ENV === 'development'){
     //each req
 
 }
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
+
 
 //use routes 
 app.use('/api',authRouter);
 app.use('/api',userRouter);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'client','build','index.html'));
+    });
+}
 
 app.use((req,res,next)=>{
     res.status(404).json({
@@ -41,7 +48,7 @@ app.use((req,res,next)=>{
         message: "Page not Found"
     })
 });
-const PORT = process.env.PORT || 8080;
+
 
 app.listen(PORT,()=>{
     console.log(`App listening on port ${PORT}`);
