@@ -19,7 +19,7 @@ class Forgot extends React.Component{
         this.setState({textchange:'Submitting'});
         
         if (Email) {
-           axios.put(`http://localhost:8080/api/forgotpassword`, {email:Email}).then(res => {
+           axios.put(`${process.env.REACT_APP_API_URL}/forgotpassword`, {email:Email}).then(res => {
                  this.setState({email:''});
                  toast.success(`Please check your email`);
              })

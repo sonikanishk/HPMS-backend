@@ -32,7 +32,7 @@ class Reset extends React.Component{
         this.setState({password1:''});
         this.setState({password2:''});
         if ((Password1 === Password2) && Password1 && Password2) {
-           axios.put(`http://localhost:8080/api/resetpassword`, {newPassword:Password1,resetPasswordLink:Token}).then(res => {
+           axios.put(`${process.env.REACT_APP_API_URL}/resetpassword`, {newPassword:Password1,resetPasswordLink:Token}).then(res => {
                  toast.success(res.data.message);
              })
              .catch(err => {

@@ -13,10 +13,11 @@ import Private from './components/Private.jsx';
 import Signout from './components/SignOut.jsx';
 import Forgot from './components/Forgot.js';
 import Reset from './components/Reset.js';
+
 import dotenv from 'dotenv';
 
 dotenv.config();
-console.log(process.env.REACT_APP_API_URL);
+
 function App() {
   return (
     <div className="page-element">

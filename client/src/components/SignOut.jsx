@@ -33,7 +33,7 @@ class SignOut extends React.Component {
     }
     
     if(token!==undefined){
-      axios.get(`http://localhost:8080/api/user/${isAuth()._id}`, {
+      axios.get(`${process.env.REACT_APP_API_URL}/user/${isAuth()._id}`, {
           headers: {
             Authorization: `Bearer ${this.state.token}`
           }
