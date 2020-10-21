@@ -13,6 +13,7 @@ import Private from './components/Private.jsx';
 import Signout from './components/SignOut.jsx';
 import Forgot from './components/Forgot.js';
 import Reset from './components/Reset.js';
+import QuickQueries from './components/QuickQueries';
 
 import dotenv from 'dotenv';
 
@@ -35,7 +36,7 @@ function App() {
                         <Route path="/signout" exact component = {Signout} />
                         <Route path="/forgotpassword" exact component = {Forgot} />
                         <Route path="/resetpassword/:token" exact component = {Reset} />
-                        
+                        <Route path="/queries" exact component={QuickQueries}/>
                         
                 </Switch>
             </Router>
