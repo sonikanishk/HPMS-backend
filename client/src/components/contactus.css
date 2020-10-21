@@ -6,7 +6,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.content{
+.contentf{
     padding-left: 6rem;
     padding-right: 6rem;
     margin: 0;
@@ -59,9 +59,9 @@
 }
 
 @media(max-width: 720px){
-    .content{
-        padding-left: 3rem;
-        padding-right: 3rem;
+    .contentf{
+        padding-left: 1rem;
+        padding-right: 1rem;
         margin: 0;
     }
     .cont{

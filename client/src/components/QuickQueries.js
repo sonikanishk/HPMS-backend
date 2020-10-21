@@ -68,11 +68,11 @@ class QuickQueries extends React.Component {
                     <h2> QUICK QUERIES </h2>
                 </div>
                 
-                <div class="row content">
+                <div class="row contentf">
                     <div class="col-12">
 
                         <form style={{paddingTop:"10px",marginTop:"10px",paddingBottom:"10px",marginBottom:"10px"}} class="rounded  card" onSubmit={this.handleSubmit}>
-                            <div class="content">
+                            <div class="contentf">
                                 <h3 style={{textAlign:"center",paddingTop:"10px",paddingBottom:"20px"}}> QUERY FORM </h3>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -115,6 +115,7 @@ class QuickQueries extends React.Component {
                             </div>
                         </form>            
                     </div>
+                    <div class="contentf">
                     <div class="faq">
                         <h3> FAQ </h3>
                     </div>
@@ -221,6 +222,7 @@ class QuickQueries extends React.Component {
                                 Singapore dollars.</p>
                             </li>
 					</ol>
+                    </div>
                 </div>
             </div>
         )

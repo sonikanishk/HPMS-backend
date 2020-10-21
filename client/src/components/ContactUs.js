@@ -73,7 +73,7 @@ class ContactUs extends React.Component {
                        
                     </div>
                 </div>
-                <div class="row content">
+                <div class="row contentf">
                     <div class="col-xl-4" style={{paddingTop:"10px"}}>
                         <div class="card">
                             
