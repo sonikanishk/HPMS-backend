@@ -1,4 +1,6 @@
 import React from 'react';
+import './aboutus.css'
+
 class ContactUs extends React.Component {
     render(){
         return(
@@ -8,7 +10,9 @@ class ContactUs extends React.Component {
                       COVID-19 Helpline: 011-42253001, 011-42253002, 011-42253003, +91-9818840984, +91-9311407392, 9311407393
                    </li>
                 </div>
-                Contact us Page
+                <div class = "aboutus responsive">
+                    <h2> CONTACT US </h2>
+                </div>
             </div>
         )
     }
