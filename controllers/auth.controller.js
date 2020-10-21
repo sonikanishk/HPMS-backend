@@ -1,4 +1,6 @@
 const User = require('../models/auth.model');
+const Query = require('../models/query.model');
+
 const expressJwt = require('express-jwt');
 const _ = require('lodash');
 const fetch = require('node-fetch');
@@ -279,5 +281,36 @@ exports.resetPasswordController = (req, res) => {
         );
       });
     }
+  }
+};
+
+exports.queryController = (req, res) => {
+  const { email, name, number, city, statee, comment, address, zip } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    const colab = {email,name,address,number,comment,city,statee,zip};
+    const user = new Query(colab);
+
+        user.save((err, user) => {
+          if (err) {
+            console.log('Save error', errorHandler(err));
+            return res.status(401).json({
+              errors: errorHandler(err)
+            });
+          } else {
+            return res.json({
+              success: true,
+              message: user,
+              message: 'Query Sent'
+            });
+          }
+        });
   }
 };
