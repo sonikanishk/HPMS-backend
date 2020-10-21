@@ -92,7 +92,7 @@ class Reset extends React.Component{
           ></div>
         </div>
       </div>
-      ;
+      
     </div>
         )
     }

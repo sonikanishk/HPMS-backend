@@ -6,6 +6,7 @@ import { authenticate, isAuth } from '../helpers/auth';
 import { Redirect } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import {Link} from 'react-router-dom';
+
 const Login = ({ history }) => {
   const [formData, setFormData] = useState({
     email: '',
@@ -101,6 +102,23 @@ const Login = ({ history }) => {
                 </Link>
               </form>
             </div>
+            <div className='my-12 border-b text-center col'>
+                <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
+                  Or Sign up 
+                </div>
+                <Link to='/register' className='no-underline hover:no-underline' style={{minWidth:"200px"}}>
+                <button
+                      type='submit'
+                      className='mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
+                    >
+                      
+                      <i className='fas fa-user-plus fa 1x w-6  -ml-2' />
+                      <span className='ml-3'> Sign Up </span>
+                </button>
+                </Link>
+            </div>
+            
+
           </div>
         </div>
         <div className='flex-1 bg-indigo-100 text-center hidden lg:flex'>
@@ -110,7 +128,7 @@ const Login = ({ history }) => {
           ></div>
         </div>
       </div>
-      ;
+      
     </div>
   );
 };

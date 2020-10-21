@@ -96,7 +96,7 @@ class SignOut extends React.Component {
           ></div>
         </div>
       </div>
-      ;
+      
     </div>
   );
 }};

@@ -12,8 +12,8 @@ class AboutUs extends React.Component {
                 <div class = "aboutus">
                     <h2> ABOUT US </h2>
                 </div>
-                <div class="piccon">
-                    <div class = "pic">
+                <div class="piccon shadow">
+                    <div class = "pic rounded">
                        
                     </div>
                 </div>

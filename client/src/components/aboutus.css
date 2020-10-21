@@ -15,7 +15,7 @@
     text-align:center;
 }
 .pic{
-    background: url(aboutus1.png) no-repeat;
+    background: url(../assets/aboutus1.png) no-repeat;
     width: 1200px;
     height: 400px;
 }
@@ -68,7 +68,7 @@
         text-align:center;
     }
     .pic{
-        background: url(aboutus2.png) no-repeat;
+        background: url(../assets/aboutus2.png) no-repeat;
         width: 800px;
         height: 250px;
     }
