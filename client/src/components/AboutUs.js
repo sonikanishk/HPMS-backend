@@ -43,9 +43,6 @@ class AboutUs extends React.Component {
                         Our passion well reflects in the fact that we set the industry standards when it comes to cure, care and comfort. To deliver International Class healthcare with a total service focus, by creating an institution committed to the highest standards of medical & service excellence, patient care, scientific knowledge and medical education. To be leaders in healthcare delivery, medical education, training and research and to meet the changing expectations of the community.
                     </p>
 
-
-                    
-
                 </div>
             </div>
         )
