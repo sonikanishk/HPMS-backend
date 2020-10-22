@@ -98,7 +98,7 @@ class Header extends React.Component {
                     <Navbar id="mr-auto2">
                             <Link class="link rounded" to="/appointment"><div class="appointment"></div> APPOINTMENTS </Link>
                             <Link class="link rounded" to="/reports"><div class="reports"></div> LAB REPORTS </Link>
-                            <Link class="link rounded" to="/doctor"><div class="doctor"></div> FIND A DOCTOR </Link>
+                            <Link class="link rounded" to="/departments"><div class="doctor"></div> DEPARTMENTS </Link>
                             <Link class="link rounded" to="/queries"><div class="queries"></div> QUICK QUERIES </Link>
                      </Navbar>
                 </div>
