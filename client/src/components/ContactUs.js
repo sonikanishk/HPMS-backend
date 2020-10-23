@@ -87,7 +87,6 @@ class ContactUs extends React.Component {
                             </ul>
                             <div class="card-body row">
                                 <Link to='/appointment' class="card-link" style={{textAlign:"center",flex:"auto"}}> Book Appointment </Link>
-                                <Link to='/doctor' class="card-link" style={{textAlign:"center",flex:"auto"}}> Find Doctor </Link>
                             </div>
                         </div> 
                     </div>

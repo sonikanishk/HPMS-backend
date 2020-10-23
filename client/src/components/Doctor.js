@@ -14,6 +14,13 @@ class Doctor extends React.Component{
                     <h2> DEPARTMENTS </h2>
                 </div>
                 <div class="contentf">
+                    <div class="row">
+                        <div class="hheading col-3"> <h3> Our Vision </h3></div>
+                    </div>
+                    <div class="borderr"></div>
+                    <p class="justify"> HPMS has dedicated Centers of Excellence for several key specialties and superspecialties. They are unique and state of the art facilities spread across several of the hospital location and each Centre of Excellence stands out as a citadel of excellence.
+
+At HPMS, we consider it our prime Responsibility to provide high quality clinical care to all our patients. Putting the patient at the core of our operations, we have developed robust quality standards, used expert diagnoses and treatment plans and enhanced infection and safety protocols to render them the most appropriate treatment.</p>
                 <div class="wrapper">
                     <div class="cards_wrap">
                         <div class="card_item">
@@ -96,11 +103,11 @@ class Doctor extends React.Component{
                             </div>
                             <div class="card_bottom">
                             <div class="card_category">
-                                Gynecology
+                                Gynaecology
                             </div>
                             <div class="card_info">
                                 <p>
-                                    Gynecologic oncology is one the specialized field of medicine that deals in the cancer of the female reproductive system.
+                                    Gynaecologic oncology is one the specialized field of medicine that deals in the cancer of the female reproductive system.
                                 </p>
                             </div>
                             

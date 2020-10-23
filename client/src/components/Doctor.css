@@ -18,6 +18,12 @@
 .borderr{
     border-top: 2px solid #efefef; 
 }
+.hheading{
+  color: #013974;
+  border-bottom: 5px solid #5dd4c7;
+  padding-top: 20px;
+  padding-left: 10px;
+}
 
 @media(max-width: 720px){
     .contentf{
