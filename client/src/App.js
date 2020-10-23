@@ -8,7 +8,10 @@ import Emergency from'./components/Emergency';
 import AboutUs from'./components/AboutUs';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Register from './components/Register';
+import LoginMain from './components/LoginMain.jsx';
+import LoginDoctor from './components/LoginDoctor.jsx';
 import Login from './components/Login.jsx';
+import LoginStaff from './components/LoginStaff.jsx';
 import Private from './components/Private.jsx';
 import Signout from './components/SignOut.jsx';
 import Forgot from './components/Forgot.js';
@@ -34,6 +37,9 @@ function App() {
                         <Route path="/emergency" exact component = {Emergency} />
                         <Route path="/about-us" exact component = {AboutUs} />
                         <Route path="/register" exact component = {Register} />
+                        <Route path="/logindoctor" exact component = {LoginDoctor} />
+                        <Route path="/loginmain" exact component = {LoginMain} />
+                        <Route path="/loginstaff" exact component = {LoginStaff} />
                         <Route path="/login" exact component = {Login} />
                         <Route path="/private" exact component = {Private} />
                         <Route path="/signout" exact component = {Signout} />

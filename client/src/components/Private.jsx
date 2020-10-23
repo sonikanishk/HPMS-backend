@@ -63,7 +63,7 @@ class Private extends React.Component {
                     COVID-19 Helpline: 011-42253001, 011-42253002, 011-42253003, +91-9818840984, +91-9311407392, 9311407393
                 </li>
             </div>
-            <h2 style = {{font: "Yanone Kaffeesatz"}}>{this.state.formdata.name}, welcome to HPMS </h2>
+            <h2 style = {{font: "Yanone Kaffeesatz"}}> Dear {this.state.formdata.name}, Welcome to HPMS </h2>
             <div class="slider-container responsive">
                 <span id="slider-1"></span>
                 <span id="slider-2"></span>

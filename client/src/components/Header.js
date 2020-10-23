@@ -87,7 +87,7 @@ class Header extends React.Component {
                                 </>
                               :
                               <>
-                                <Link class="link" to="/login"> SIGN IN </Link>
+                                <Link class="link" to="/loginmain"> SIGN IN </Link>
                                 <Link style = {{ marginRight: "15px" }} class="link" to="/register"> SIGN UP </Link>  
                               </>
                               }

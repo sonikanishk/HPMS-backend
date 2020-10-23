@@ -1,0 +1,20 @@
+.findadoc{
+    margin-top: 5px;
+    background-color:#49c0b2;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.contentf{
+    padding-left: 6rem;
+    padding-right: 6rem;
+    margin: 0;
+}
+.justify{
+    padding-top: 10px;
+    text-align: justify;
+}
+.borderr{
+    border-top: 2px solid #efefef; 
+}
