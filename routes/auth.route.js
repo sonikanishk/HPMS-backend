@@ -6,7 +6,10 @@ const{
     SignInController,
     forgotPasswordController,
     resetPasswordController,
-    queryController
+    queryController,
+    doctorController,
+    donorController,
+    staffController
 } = require("../controllers/auth.controller.js")
 
 const {
@@ -22,5 +25,8 @@ router.post('/login',validLogin,SignInController)
 router.post('/query',queryController);
 router.put('/forgotpassword', forgotPasswordValidator, forgotPasswordController);
 router.put('/resetpassword', resetPasswordValidator, resetPasswordController);
+router.get('/doctors',doctorController);
+router.get('/donor',donorController);
+router.get('/staff',staffController);
 
 module.exports = router

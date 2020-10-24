@@ -1,5 +1,8 @@
 const User = require('../models/auth.model');
 const Query = require('../models/query.model');
+const Doc = require('../models/doctor.model');
+const Staff = require('../models/staff.model');
+const Donor = require('../models/donor.model');
 
 const expressJwt = require('express-jwt');
 const _ = require('lodash');
@@ -9,6 +12,7 @@ const jwt = require('jsonwebtoken');
 const { errorHandler } = require('../helpers/dbhelper');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.MAIL_KEY);
+const mongoose = require('mongoose');
 
 
 exports.registerController = (req, res) => {
@@ -314,3 +318,55 @@ exports.queryController = (req, res) => {
         });
   }
 };
+
+exports.doctorController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    Doc.find().then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+    
+  }
+};
+
+exports.staffController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    Donor.find().then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+    
+  }
+};
+
+exports.donorController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    Staff.find().then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+    
+  }
+};
+

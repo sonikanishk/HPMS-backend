@@ -73,22 +73,22 @@ class Header extends React.Component {
                 <div class="nav1">
                     <Nav id="mr-auto">
                     
-                              <Link class="link" to="/"> HOME </Link>
-                              <Link class="link" to="/about-us"> ABOUT US </Link>
+                              <Link class="link sizzz" to="/"> HOME </Link>
+                              <Link class="link sizzz" to="/about-us"> ABOUT US </Link>
 
-                              <Link class="emergency" to="/emergency">
+                              <Link class="emergency sizzz" to="/emergency">
                                   EMERGENCY 24x7
                               </Link>
-                              <Link class="link" to="/contact-us"> CONTACT US </Link>
+                              <Link class="link sizzz" to="/contact-us"> CONTACT US </Link>
                                
                               {this.state.isLoggedIn==='yes'?
                                 <>   
-                                  <Link class="link" to="/signout" style = {{ marginRight: "15px" }}> SIGN OUT </Link>
+                                  <Link class="link sizzz" to="/signout" style = {{ marginRight: "15px" }}> SIGN OUT </Link>
                                 </>
                               :
                               <>
-                                <Link class="link" to="/loginmain"> SIGN IN </Link>
-                                <Link style = {{ marginRight: "15px" }} class="link" to="/register"> SIGN UP </Link>  
+                                <Link class="link sizzz" to="/loginmain"> SIGN IN </Link>
+                                <Link style = {{ marginRight: "15px" }} class="link sizzz" to="/register"> SIGN UP </Link>  
                               </>
                               }
 
@@ -96,10 +96,10 @@ class Header extends React.Component {
                 </div>
                 <div class="nav2">
                     <Navbar id="mr-auto2">
-                            <Link class="link rounded" to="/appointment"><div class="appointment"></div> APPOINTMENTS </Link>
-                            <Link class="link rounded" to="/reports"><div class="reports"></div> LAB REPORTS </Link>
-                            <Link class="link rounded" to="/departments"><div class="doctor"></div> DEPARTMENTS </Link>
-                            <Link class="link rounded" to="/queries"><div class="queries"></div> QUICK QUERIES </Link>
+                            <Link class="link rounded" to="/appointment"><div class="appointment"></div> <span class="sizz">APPOINTMENTS</span> </Link>
+                            <Link class="link rounded" to="/reports"><div class="reports"></div> <span class="sizz">LAB REPORTS</span> </Link>
+                            <Link class="link rounded" to="/departments"><div class="doctor"></div> <span class="sizz">DEPARTMENTS</span> </Link>
+                            <Link class="link rounded" to="/queries"><div class="queries"></div> <span class="sizz">QUICK QUERIES</span></Link>
                      </Navbar>
                 </div>
 
