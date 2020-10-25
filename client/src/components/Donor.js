@@ -13,7 +13,7 @@ function myfn() {
 class Donor extends React.Component{
     state={
         bloodgrp: 'All',
-        organ: '',
+        organ: 'All',
         textch: 'Submit',
         details:[]
     }
@@ -140,6 +140,15 @@ class Donor extends React.Component{
                     </div>
                     </form>
                     <div class="row">
+                        
+                        {details.length === 0?this.state.organ!=='All'?
+                        
+                        <div style={{padding:"10px"}}> Sorry we could not find any Results. Please check the Name or try something else. </div>
+                        
+                        :
+                        null
+                        :null
+                        }
                         {details.map((item, index) => {
                             return (
                             <div className="col-md-4 col-sm-6" style={{padding:"10px"}}>

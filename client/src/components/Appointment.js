@@ -10,6 +10,7 @@ function myfn() {
         alert('Appointment Booked for Tommorow 1pm')
     )
 }
+
 class Appointment extends React.Component{
     state={
         department: 'All',
@@ -128,7 +129,14 @@ class Appointment extends React.Component{
                     </div>
                     </form>
                     <div class="row">
+                        {details.length === 0?this.state.name!==''?
                         
+                        <div style={{padding:"10px"}}> Sorry we could not find any Results. Please check the Name or try something else. </div>
+                        
+                        :
+                        null
+                        :null
+                        }
                         {details.map((item, index) => {
                             return (
                             <div className="col-md-4 col-sm-6" style={{padding:"10px"}}>
