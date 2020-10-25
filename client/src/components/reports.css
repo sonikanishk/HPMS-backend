@@ -22,14 +22,14 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
-    height: 620px;
+    height: 650px;
     overflow: hidden;
     text-align:center;
 }
 .picccc{
-    background: url(../assets/rep1.png) no-repeat;
+    background: url(../assets/rep1.jpg) no-repeat;
     width: 1200px;
-    height: 620px;
+    height: 650px;
 }
 .report{
     color: #013974;
@@ -44,33 +44,33 @@
         margin: 0;
     }
     .picccc{
-        background: url(../assets/rep2.png) no-repeat;
-        width: 800px;
-        height: 415px;
+        background: url(../assets/rep2.jpg) no-repeat;
+        width: 700px;
+        height: 379px;
     }
     .picconemerp{
         margin-left: auto;
         margin-right: auto;
-        max-width: 800px;
-        height: 415px;
+        max-width: 700px;
+        height: 379px;
         overflow: hidden;
         text-align:center;
     }
 }
-@media(max-width: 800px){
+@media(max-width: 700px){
     .contentf{
         margin: 0;
     }
     .picccc{
-        background: url(../assets/rep3.png) no-repeat;
-        width: 300px;
-        height: 160px;
+        background: url(../assets/rep3.jpg) no-repeat;
+        width: 330px;
+        height: 175px;
     }
     .picconemerp{
         margin-left: auto;
         margin-right: auto;
-        max-width: 300px;
-        height: 158px;
+        max-width: 330px;
+        height: 175px;
         overflow: hidden;
         text-align:center;
     }

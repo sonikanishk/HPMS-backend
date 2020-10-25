@@ -12,7 +12,15 @@
   height: 115px;
   background-position-x: right;
 }
-
+.checkbtn{
+  font-size: 35px;
+  color: #65bad4;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
 .nav1{
 font-size: 10pt;
 }
@@ -78,6 +86,16 @@ transition: 0.25s;
   height: 50px;
   background-position-x: right;
 }
+.donor{
+  background: url(../assets/donor.png) no-repeat 50% 50%;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  background-position-x: right;
+}
+.comp{
+  display: flex;
+}
 @media only screen and (max-width: 768px) {
 #mr-auto{
     justify-content: center;
@@ -94,4 +112,23 @@ transition: 0.25s;
 }
 }
 
+@media only screen and (max-width: 600px){
+  #mr-auto2{
+    display: block;
+  }
+  .sizz{
+    display: flow-root;
+  }
+  .checkbtn{  
+    display: block;
+  }
+  .comp{
+    display: block;
+  }
+  #check:checked  .comp{
+    display: none;
+    transition: 0.5s;
+  }
+ 
+}
 
