@@ -1,5 +1,7 @@
 import React from 'react';
 import './appointment.css'
+import { isAuth } from '../helpers/auth';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -28,26 +30,22 @@ class Appointment extends React.Component{
         const Name = this.state.name;
         const Department = this.state.department;
         
+    
         if (Department || Name) {
-            console.log(Department);
-            console.log(Name);
-        }
-        if (Department || Name) {
-            axios.get(`${process.env.REACT_APP_API_URL}/doctors`, {department:Department,name:Name}).then(res => {
-                  this.setState({department:''});
-                  this.setState({name:''});
-                  console.log(res.data);                 
+            axios.post(`${process.env.REACT_APP_API_URL}/doc`, {department:Department,name:Name}).then(res => {
+                  this.setState({details:res.data}); 
+                  this.setState({textch:'Submit'});
               })
               .catch(err => {
                console.log(err.response)
                toast.error(err.response.data.error);
+               this.setState({textch:'Submit'});
              });
          } else {
-           toast.error('Please fill all fields');
-         }
-        this.setState({textchange:'Submit'});
+           toast.error('Please Select a different Department or Name');
+           this.setState({textch:'Submit'});
+         }   
     }
-    
     CustomCard = ({ name, email, address, number, speciality }) => {
         return (
           <div>
@@ -74,11 +72,8 @@ class Appointment extends React.Component{
         );
       };
     componentDidMount(){
-        const Name = this.state.name;
-        const Department = this.state.department;
-        axios.get(`${process.env.REACT_APP_API_URL}/doctors`, {department:Department,name:Name}).then(res => {
-            this.setState({department:''});
-            this.setState({name:''});
+        
+        axios.get(`${process.env.REACT_APP_API_URL}/doctors`).then(res => {
             
             this.setState({details:res.data});
                           
@@ -92,6 +87,9 @@ class Appointment extends React.Component{
         const details = this.state.details;
         return(
             <div>
+                
+                {isAuth() ? null : toast.error('Please Sign in First')}
+                {isAuth() ? null : <Redirect to="/loginmain"/>}
                 <ToastContainer/>
                 <div class="marqee">
                    <li class="list-inline">
@@ -113,7 +111,7 @@ class Appointment extends React.Component{
                                 <option>Cancer care</option>
                                 <option>Dermitology</option>
                                 <option>Diabetic care</option>
-                                <option>Gynaeology</option>
+                                <option>Gynaecology</option>
                                 <option>Neurosciences</option>
                                 <option>Orthopaedics</option>
                                 <option>Pathology</option>
@@ -132,7 +130,7 @@ class Appointment extends React.Component{
                     </div>
                     </form>
                     <div class="row">
-                        {console.log(details)}
+                        
                         {details.map((item, index) => {
                             return (
                             <div className="col-md-4 col-sm-6" style={{padding:"10px"}}>

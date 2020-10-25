@@ -9,7 +9,10 @@ const{
     queryController,
     doctorController,
     donorController,
-    staffController
+    staffController,
+    docController,
+    donorsController,
+    stafffController
 } = require("../controllers/auth.controller.js")
 
 const {
@@ -28,5 +31,10 @@ router.put('/resetpassword', resetPasswordValidator, resetPasswordController);
 router.get('/doctors',doctorController);
 router.get('/donor',donorController);
 router.get('/staff',staffController);
+
+router.post('/doc',docController);
+router.post('/donors',donorsController);
+router.post('/stafff',stafffController);
+
 
 module.exports = router

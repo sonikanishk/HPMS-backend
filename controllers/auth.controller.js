@@ -320,7 +320,6 @@ exports.queryController = (req, res) => {
 };
 
 exports.doctorController = (req, res) => {
-  const { department,name } = req.body;
   
   const errors = validationResult(req);
 
@@ -337,7 +336,6 @@ exports.doctorController = (req, res) => {
 };
 
 exports.staffController = (req, res) => {
-  const { department,name } = req.body;
   
   const errors = validationResult(req);
 
@@ -354,7 +352,6 @@ exports.staffController = (req, res) => {
 };
 
 exports.donorController = (req, res) => {
-  const { department,name } = req.body;
   
   const errors = validationResult(req);
 
@@ -370,3 +367,68 @@ exports.donorController = (req, res) => {
   }
 };
 
+
+
+exports.docController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    if(department==="All" && name===""){
+      Doc.find().then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else if(department!=="All" && name===""){
+      Doc.find({speciality:department}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else if(department==="All" && name!==""){
+      Doc.find({name:{$regex:name}}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else{
+      Doc.find({name:{$regex:name},speciality:department}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+  }
+};
+
+exports.stafffController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    Donor.find().then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+    
+  }
+};
+
+exports.donorsController = (req, res) => {
+  const { department,name } = req.body;
+  
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const firstError = errors.array().map(error => error.msg)[0];
+    return res.status(422).json({
+      errors: firstError
+    });
+  } else {
+    Staff.find().then(exercises => res.json(exercises))
+    .catch(err => res.status(400).json('Error: ' + err));
+    
+  }
+};
