@@ -19,11 +19,26 @@ render(){
                 </div>
                 <div class="findadoc"> 
                     <h2> YOUR REPORTS </h2>
-                </div> 
-                <div class="contentf" style={{marginTop:"25px",textAlign:"-webkit-center"}}>
-                    <div class="picccc"> </div>
+                </div>
+                <div class="picconemerp shadow">
+                        <div class = "picccc rounded"> 
+                       
+                       </div>
+                    
+                </div>
+                {/* <div class="contentf" style={{marginTop:"25px",textAlign:"-webkit-center"}}>
+                    
                     <p style={{textAlign:"left"}}> Currently you have no Due Reports. </p>
                     
+                </div> */}
+                <div class="row contentf">
+                    <div class="report">
+                        <h3> Reports </h3>
+                    </div>
+                    <div class="borderr col-12"></div>                    
+                    <p class="justify">
+                        Currently you have no Due Reports. To Book an Appointment <Link to="/appointment" class="hover:no-underline"> click here</Link>.
+                    </p>
                 </div>
         </div>
     )
