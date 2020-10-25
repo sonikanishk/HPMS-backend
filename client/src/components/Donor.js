@@ -7,13 +7,13 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function myfn() {
     return(
-        alert('Appointment Booked for Tommorow 1pm')
+        alert('Message has been sent to Donor')
     )
 }
-class Appointment extends React.Component{
+class Donor extends React.Component{
     state={
-        department: 'All',
-        name: '',
+        bloodgrp: 'All',
+        organ: '',
         textch: 'Submit',
         details:[]
     }
@@ -25,12 +25,12 @@ class Appointment extends React.Component{
         e.preventDefault();
         this.setState({textch:'Submitting'});
         
-        const Name = this.state.name;
-        const Department = this.state.department;
+        const Organ = this.state.organ;
+        const Bloodgrp = this.state.bloodgrp;
         
-    
-        if (Department || Name) {
-            axios.post(`${process.env.REACT_APP_API_URL}/doc`, {department:Department,name:Name}).then(res => {
+        if (Bloodgrp || Organ) {
+            axios.post(`${process.env.REACT_APP_API_URL}/donors`, {bloodgrp:Bloodgrp,organ:Organ}).then(res => {
+                  console.log(res.data);  
                   this.setState({details:res.data}); 
                   this.setState({textch:'Submit'});
               })
@@ -40,29 +40,33 @@ class Appointment extends React.Component{
                this.setState({textch:'Submit'});
              });
          } else {
-           toast.error('Please Select a different Department or Name');
+           toast.error('Invalid Request');
            this.setState({textch:'Submit'});
          }   
     }
-    CustomCard = ({ name, email, address, number, speciality }) => {
+    CustomCard = ({ name,lname, email, gender, number, blood_grp,organ }) => {
         return (
           <div>
             
                         <div class="card">
                                 
                                 <div class="card-body">
-                                    <h4 class="card-title" style={{textAlign:"center"}}> {name} </h4>
+                                    <h4 class="card-title" style={{textAlign:"center"}}> {name} {lname} </h4>
                                 </div>
                                 <ul class="list-group list-group-flush" style={{fontSize:"13pt"}}>
                                     
-                                    <li class="deets"> &nbsp; <i class="far fa-building"></i> Department: {speciality}  </li>
+                                    <li class="deets"> &nbsp; <i class="far fa-building"></i> Blood Group: {blood_grp}  </li>
                                     <li class="deets"> &nbsp; <i class="fas fa-phone-square-alt"></i> Contact: {number}  </li>
                                     <li class="deets"> &nbsp; <i class="fas fa-envelope-square"></i> Email: {email} </li> 
-                                    <li class="deets"> &nbsp; <i class="far fa-address-card"></i> Address: {address} </li> 
+                                    <li class="deets"> &nbsp; <i class="fas fa-venus-mars"></i> Gender: {gender} </li> 
+                                    
+                                    <li class="deets"> &nbsp; <i class="fas fa-lungs"></i> Organ: {organ} </li> 
+
+                                    
                                     
                                 </ul>
                                 <div class="card-body row">
-                                    <button onClick={myfn} type="submit" style={{textAlign:"center",flex:"auto"}}  class="tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"> Book Appointment </button>
+                                    <button onClick={myfn} type="submit" style={{textAlign:"center",flex:"auto"}}  class="tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"> Approach </button>
                                 </div>
                         </div>          
          
@@ -71,7 +75,7 @@ class Appointment extends React.Component{
       };
     componentDidMount(){
         
-        axios.get(`${process.env.REACT_APP_API_URL}/doctors`).then(res => {
+        axios.get(`${process.env.REACT_APP_API_URL}/donor`).then(res => {
             
             this.setState({details:res.data});
                           
@@ -95,32 +99,40 @@ class Appointment extends React.Component{
                    </li>
                 </div>
                 <div class="findadoc"> 
-                    <h2> FIND A DOCTOR </h2>
+                    <h2> FIND A DONOR </h2>
                 </div> 
                 <div class="contentf" style={{marginTop:"25px"}}>
                     <form onSubmit={this.handleSubmit}>                    
                     <div class="row">
                         
                         <div class = "col-md-5">
-                            <label>Department</label>
-                            <select class="form-control" onChange={this.handleChange('department')}>
+                            <label>Blood Group</label>
+                            <select  class="form-control" onChange={this.handleChange('bloodgrp')}>
                                 <option selected>All</option>
-                                <option>Cardiac Sciences</option>
-                                <option>Cancer care</option>
-                                <option>Dermitology</option>
-                                <option>Diabetic care</option>
-                                <option>Gynaecology</option>
-                                <option>Neurosciences</option>
-                                <option>Orthopaedics</option>
-                                <option>Pathology</option>
-                                <option>Radiology</option>
-                                <option>Urology</option>   
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-5">
-                            <label>Search by Name</label>
-                            <input type="text" class="form-control" placeholder="Please Enter Name" onChange={this.handleChange('name')}/>
+                        <div class = "col-md-5">
+                            <label>Organ</label>
+                            <select class="form-control" onChange={this.handleChange('organ')}>
+                                <option selected>All</option>
+                                <option>eyes</option>
+                                <option>liver</option>
+                                <option>kidney</option>
+                                <option>tissues</option>
+                                <option>bone marrow</option>
+                                <option>plazma</option>
+                                <option>blood</option>   
+                            </select>
                         </div>
+                        
                         <div class="col-md-2">
                             <button type="submit" style = {{marginTop:"30pt"}} class="tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"> {this.state.textch} </button>
                         </div>
@@ -128,17 +140,17 @@ class Appointment extends React.Component{
                     </div>
                     </form>
                     <div class="row">
-                        
                         {details.map((item, index) => {
                             return (
                             <div className="col-md-4 col-sm-6" style={{padding:"10px"}}>
                                 <this.CustomCard
-                                name={item.name}    
+                                name={item.first_name}
+                                lname = {item.last_name}   
                                 email={item.email}
-                                
-                                address={item.address}
-                                number={item.phone}
-                                speciality={item.speciality}
+                                gender={item.gender}
+                                number={item.number}
+                                blood_grp={item.blood_group}
+                                organ = {item.organ}
                                 />
                             </div>
                         )
@@ -150,5 +162,5 @@ class Appointment extends React.Component{
         )
     }
 }
-export default Appointment;
+export default Donor;
 

@@ -345,7 +345,7 @@ exports.staffController = (req, res) => {
       errors: firstError
     });
   } else {
-    Donor.find().then(exercises => res.json(exercises))
+    Staff.find().then(exercises => res.json(exercises))
     .catch(err => res.status(400).json('Error: ' + err));
     
   }
@@ -361,7 +361,7 @@ exports.donorController = (req, res) => {
       errors: firstError
     });
   } else {
-    Staff.find().then(exercises => res.json(exercises))
+    Donor.find().then(exercises => res.json(exercises))
     .catch(err => res.status(400).json('Error: ' + err));
     
   }
@@ -410,14 +410,14 @@ exports.stafffController = (req, res) => {
       errors: firstError
     });
   } else {
-    Donor.find().then(exercises => res.json(exercises))
+    Staff.find().then(exercises => res.json(exercises))
     .catch(err => res.status(400).json('Error: ' + err));
     
   }
 };
 
 exports.donorsController = (req, res) => {
-  const { department,name } = req.body;
+  const { bloodgrp,organ } = req.body;
   
   const errors = validationResult(req);
 
@@ -427,8 +427,21 @@ exports.donorsController = (req, res) => {
       errors: firstError
     });
   } else {
-    Staff.find().then(exercises => res.json(exercises))
-    .catch(err => res.status(400).json('Error: ' + err));
-    
+    if(bloodgrp==='All' && organ==='All'){
+      Donor.find().then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else if(bloodgrp!=='All' && organ==='All'){
+      Donor.find({blood_group:bloodgrp}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else if(bloodgrp==='All' && organ!=='All'){
+      Donor.find({organ:organ}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    }
+    else{
+      Donor.find({organ:organ,blood_group:bloodgrp}).then(exercises => res.json(exercises))
+      .catch(err => res.status(400).json('Error: ' + err));
+    } 
   }
 };
