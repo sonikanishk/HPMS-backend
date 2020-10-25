@@ -7,11 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function myfn() {
     return(
-        alert('Appointment booked')
+        alert('Appointment Booked for Tommorow 1pm')
     )
-    
 }
-
 class Appointment extends React.Component{
     state={
         department: 'All',

@@ -19,7 +19,7 @@ import Reset from './components/Reset.js';
 import QuickQueries from './components/QuickQueries';
 import Doctor from './components/Doctor';
 import Appointment from './components/Appointment';
-
+import Reports from './components/Reports';
 
 import dotenv from 'dotenv';
 
@@ -48,6 +48,7 @@ function App() {
                         <Route path="/queries" exact component={QuickQueries}/>
                         <Route path="/departments" exact component={Doctor}/>
                         <Route path="/appointment" exact component={Appointment}/>
+                        <Route path="/reports" exact component={Reports}/>
                         
                         
                 </Switch>
