@@ -97,18 +97,21 @@ class Header extends React.Component {
                 <div class="nav2">
                     <Navbar id="mr-auto2">
                       <div class="row" style={{margin:"0px",justifyContent:"center"}}>
-                            <input type="checkbox" id="check" />
+                            <input type="checkbox" id="check">
+
+                            </input>
                             <label for="check" class="checkbtn">
                               <i class="fas fa-bars"></i>
                             </label>
+                            <span class="comp" style={{margin:"0px"}}>
+                              <Link class="link rounded" to="/appointment"><div class="appointment"></div> <span class="sizz">APPOINTMENTS</span> </Link>
+                              <Link class="link rounded" to="/reports"><div class="reports"></div> <span class="sizz">LAB REPORTS</span> </Link>
+                              <Link class="link rounded" to="/departments"><div class="doctor"></div> <span class="sizz">DEPARTMENTS</span> </Link>
+                              <Link class="link rounded" to="/queries"><div class="queries"></div> <span class="sizz">QUICK QUERIES</span></Link>
+                              <Link class="link rounded" to="/donor"><div class="donor"></div> <span class="sizz">FIND DONOR</span></Link>
+                            </span>
                       </div>
-                      <span class="comp" style={{margin:"0px"}}>
-                            <Link class="link rounded" to="/appointment"><div class="appointment"></div> <span class="sizz">APPOINTMENTS</span> </Link>
-                            <Link class="link rounded" to="/reports"><div class="reports"></div> <span class="sizz">LAB REPORTS</span> </Link>
-                            <Link class="link rounded" to="/departments"><div class="doctor"></div> <span class="sizz">DEPARTMENTS</span> </Link>
-                            <Link class="link rounded" to="/queries"><div class="queries"></div> <span class="sizz">QUICK QUERIES</span></Link>
-                            <Link class="link rounded" to="/donor"><div class="donor"></div> <span class="sizz">FIND DONOR</span></Link>
-                      </span>
+                      
                      </Navbar>
                 </div>
 

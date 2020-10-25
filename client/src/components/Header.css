@@ -123,12 +123,21 @@ transition: 0.25s;
     display: block;
   }
   .comp{
-    display: block;
-  }
-  #check:checked  .comp{
+    width: 100%;
     display: none;
     transition: 0.5s;
   }
+  #check:checked ~ .comp{
+    left: 0;
+    display: block;
+    transition: 0.5s;
+  }
+  .link:hover{
+    color:#121212;
+    background:white;
+    text-decoration: none;
+    transition: 0.25s;
+    }
  
 }
 
